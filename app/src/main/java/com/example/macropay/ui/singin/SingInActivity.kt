@@ -14,6 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import com.example.macropay.core.extensions.intentToAndClearStack
+import com.example.macropay.ui.movies.MoviesActivity
 import com.example.macropay.ui.theme.MicroPayChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -62,7 +64,7 @@ class SingInActivity : ComponentActivity() {
     }
 
     private fun openHomeActivity() {
-        // startActivity(intentToAndClearStack<HomeActivity>())
+        startActivity(intentToAndClearStack<MoviesActivity>())
     }
 }
 
