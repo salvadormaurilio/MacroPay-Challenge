@@ -1,8 +1,6 @@
 package com.example.macropay.ui.movies
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -14,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.lazy.staggeredgrid.items
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -39,13 +36,13 @@ import com.example.macropay.ui.theme.Space8
 
 @SuppressLint("UnrememberedMutableInteractionSource")
 @Composable
-fun MovieItem(modifier: Modifier = Modifier, movie: Movie, onMovementClick: (id: Int) -> Unit) {
+fun MovieItem(modifier: Modifier = Modifier, movie: Movie, onMovieClick: (id: Int) -> Unit) {
     Card(
         modifier = modifier.fillMaxSize(),
         elevation = CardDefaults.cardElevation(
             defaultElevation = Space4
         ),
-        onClick = { onMovementClick(movie.id) }
+        onClick = { onMovieClick(movie.id) }
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -78,25 +75,40 @@ fun MovieItem(modifier: Modifier = Modifier, movie: Movie, onMovementClick: (id:
     }
 }
 
+@Composable
+fun MovieItems(movies: List<Movie>, onMovieClick: (id: Int) -> Unit) {
+    LazyVerticalStaggeredGrid(
+        columns = StaggeredGridCells.Fixed(2),
+        contentPadding = PaddingValues(vertical = Space16, horizontal = Space8),
+        horizontalArrangement = Arrangement.spacedBy(Space8),
+        verticalItemSpacing = Space8
+    ) {
+        items(
+            items = movies,
+            key = { it.id }
+        ) {
+            MovieItem(
+                movie = it,
+                onMovieClick = onMovieClick
+            )
+        }
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
-fun LabelMovementPreview() {
+fun MovieItemPreview() {
     MicroPayChallengeTheme {
-        LazyVerticalStaggeredGrid(
-            columns = StaggeredGridCells.Fixed(2),
-            contentPadding = PaddingValues(vertical = Space16, horizontal = Space8),
-            horizontalArrangement = Arrangement.spacedBy(Space8),
-            verticalItemSpacing = Space8
-            ) {
-            items(
-                items = givenMovies(),
-                key = { it.id }
-            ) {
-                MovieItem(
-                    movie = it,
-                    onMovementClick = {}
-                )
-            }
-        }
+        MovieItem(movie = givenMovie1(),
+            onMovieClick = {})
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MovieItemsPreview() {
+    MicroPayChallengeTheme {
+        MovieItems(movies = givenMovies(),
+            onMovieClick = {})
     }
 }
