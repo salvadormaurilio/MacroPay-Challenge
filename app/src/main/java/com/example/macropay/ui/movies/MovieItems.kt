@@ -76,8 +76,9 @@ fun MovieItem(modifier: Modifier = Modifier, movie: Movie, onMovieClick: (id: In
 }
 
 @Composable
-fun MovieItems(movies: List<Movie>, onMovieClick: (id: Int) -> Unit) {
+fun MovieItems(modifier: Modifier = Modifier, movies: List<Movie>, onMovieClick: (id: Int) -> Unit) {
     LazyVerticalStaggeredGrid(
+        modifier = modifier.fillMaxSize(),
         columns = StaggeredGridCells.Fixed(2),
         contentPadding = PaddingValues(vertical = Space16, horizontal = Space8),
         horizontalArrangement = Arrangement.spacedBy(Space8),
