@@ -24,7 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.macropay.R
-import com.example.macropay.core.ui.empty
+import com.example.macropay.core.extensions.empty
 import com.example.macropay.data.datasource.exception.DataException
 import com.example.macropay.ui.composable.EmailTextField
 import com.example.macropay.ui.composable.LaunchSnackbar

@@ -1,8 +1,11 @@
 package com.example.macropay.data.datasource.model
 
+import com.example.macropay.core.extensions.orDefault
+import com.example.macropay.domain.model.Movie
+import com.example.macropay.domain.model.MovieDetail
 import com.google.gson.annotations.SerializedName
 
-data class MovieResponse(
+data class MovieDetailResponse(
     val adult: Boolean?,
     @SerializedName("backdrop_path")
     val backdropPath: String?,
@@ -80,3 +83,16 @@ data class MovieSpokenLanguageResponse(
     val iso6391: String?,
     val name: String?,
 )
+
+fun MovieDetailResponse.toMovieDetail() = MovieDetail(
+    id = id.orDefault(),
+    image =  BASE_MOVIE_URL+backdropPath.orEmpty(),
+    title = title.orEmpty(),
+    duration = runtime.orDefault(),
+    releaseDate = releaseDate.orEmpty(),
+    rating = voteAverage.orDefault(),
+    genres = genres?.mapNotNull { it.name }.orEmpty(),
+    description = overview.orEmpty()
+)
+
+private const val BASE_MOVIE_URL= "https://image.tmdb.org/t/p/w500/"

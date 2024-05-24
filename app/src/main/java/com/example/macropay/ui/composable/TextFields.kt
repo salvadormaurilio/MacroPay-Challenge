@@ -24,7 +24,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.macropay.R
-import com.example.macropay.core.ui.empty
+import com.example.macropay.core.extensions.empty
 import com.example.macropay.ui.theme.MicroPayChallengeTheme
 import com.example.macropay.ui.theme.Space16
 

@@ -1,7 +1,7 @@
 package com.example.macropay.ui.exception
 
-import com.example.macropay.core.ui.isValidEmail
-import com.example.macropay.core.ui.isValidPassword
+import com.example.macropay.core.extensions.isValidEmail
+import com.example.macropay.core.extensions.isValidPassword
 import com.example.macropay.ui.exception.AuthUiException.EmailException
 import com.example.macropay.ui.exception.AuthUiException.NoValidationNeededException
 import com.example.macropay.ui.exception.AuthUiException.PasswordException

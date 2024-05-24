@@ -1,4 +1,4 @@
-package com.example.macropay.core.ui
+package com.example.macropay.core.extensions
 
 import java.util.regex.Pattern
 
