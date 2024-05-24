@@ -8,4 +8,6 @@ import kotlinx.coroutines.flow.Flow
 class AuthRepository @Inject constructor(private val authRemoteDataSource: AuthRemoteDataSource) {
 
     fun signIn(email: String, password: String): Flow<Result<String>> = authRemoteDataSource.signIn(email, password)
+
+    suspend fun logOut() = authRemoteDataSource.logOut()
 }

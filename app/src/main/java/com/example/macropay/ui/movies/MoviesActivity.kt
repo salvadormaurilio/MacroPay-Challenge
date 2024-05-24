@@ -14,7 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import com.example.macropay.core.extensions.intentToAndClearStack
 import com.example.macropay.ui.movie.detail.MovieDetailDetailActivity
+import com.example.macropay.ui.singin.SingInActivity
 import com.example.macropay.ui.theme.MicroPayChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -52,7 +54,7 @@ class MoviesActivity : ComponentActivity() {
             MoviesScreen(
                 moviesUiState = this,
                 onMovieClick = { moviesViewModel.navigateToMovieDetail(it) },
-                onLogoutClick = {}
+                onLogoutClick = {moviesViewModel.logOut()}
             )
         }
     }
@@ -63,9 +65,19 @@ class MoviesActivity : ComponentActivity() {
                 .flowWithLifecycle(lifecycle, Lifecycle.State.CREATED)
                 .collect { openMovieDetailActivity(it) }
         }
+
+        lifecycleScope.launch {
+            moviesViewModel.navigateToSignIn
+                .flowWithLifecycle(lifecycle, Lifecycle.State.CREATED)
+                .collect { openSignInActivity() }
+        }
     }
 
     private fun openMovieDetailActivity(id: Int) {
         startActivity(MovieDetailDetailActivity.intentToMovieDetailActivity(this, id))
+    }
+
+    private fun openSignInActivity() {
+        startActivity(intentToAndClearStack<SingInActivity>())
     }
 }

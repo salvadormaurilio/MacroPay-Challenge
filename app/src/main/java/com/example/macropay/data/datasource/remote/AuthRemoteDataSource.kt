@@ -20,4 +20,6 @@ class AuthRemoteDataSource @Inject constructor(private val firebaseAuth: Firebas
             }
         awaitClose { close() }
     }
+
+    suspend fun logOut() = firebaseAuth.signOut()
 }
