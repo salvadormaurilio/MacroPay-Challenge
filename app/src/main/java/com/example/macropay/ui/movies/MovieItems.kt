@@ -67,7 +67,7 @@ fun MovieItem(modifier: Modifier = Modifier, movie: Movie, onMovieClick: (id: In
                 modifier = Modifier
                     .padding(horizontal = Space8),
                 textAlign = TextAlign.Center,
-                text = stringResource(id = R.string.rating, movie.rating),
+                text = stringResource(id = R.string.rating_with_value, movie.rating),
                 style = MaterialTheme.typography.labelMedium
             )
             Spacer(modifier = Modifier.height(Space12))

@@ -12,6 +12,7 @@
 
     <string name="movies">Películas</string>
     <string name="movie_detail">Detalle de la Película</string>
-    <string name="rating">Calificación: %s</string>
+    <string name="rating_with_value">Calificación: %s</string>
+    <string name="release_date">Fecha de Lanzamiento</string>
 
     ç</resources>
