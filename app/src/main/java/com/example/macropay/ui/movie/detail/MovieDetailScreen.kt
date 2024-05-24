@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -100,7 +102,10 @@ fun MovementDetailTopAppBar(onBackPressedClick: () -> Unit) {
 @Composable
 fun MovementDetailContent(modifier: Modifier = Modifier, movieDetail: MovieDetail) {
     Column(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+
     ) {
         AsyncImage(
             modifier = Modifier.fillMaxWidth(),
