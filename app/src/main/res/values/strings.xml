@@ -18,4 +18,7 @@
     <string name="duration_with_value">%d min</string>
     <string name="rating">Calificación</string>
     <string name="genres">Generos</string>
+
+    <string name="logout">Cerrar Sesión</string>
+
 </resources>

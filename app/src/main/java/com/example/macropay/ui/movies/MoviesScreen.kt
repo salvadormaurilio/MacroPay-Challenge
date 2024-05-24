@@ -2,6 +2,8 @@ package com.example.macropay.ui.movies
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -10,7 +12,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -24,10 +29,10 @@ import com.example.macropay.ui.theme.White800
 
 
 @Composable
-fun MoviesScreen(moviesUiState: MoviesUiState, onMovieClick: (id: Int) -> Unit) {
+fun MoviesScreen(moviesUiState: MoviesUiState, onMovieClick: (id: Int) -> Unit, onLogoutClick: () -> Unit) {
     val snackbarHostState = remember { SnackbarHostState() }
 
-    Scaffold(topBar = { MoviesTopAppBar() },
+    Scaffold(topBar = { MoviesTopAppBar(onLogoutClick = onLogoutClick) },
         snackbarHost = { SnackbarBlue(snackbarHostState = snackbarHostState) }) {
         MoviesUiState(
             moviesUiState = moviesUiState,
@@ -40,7 +45,8 @@ fun MoviesScreen(moviesUiState: MoviesUiState, onMovieClick: (id: Int) -> Unit) 
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
-fun MoviesTopAppBar() {
+fun MoviesTopAppBar(onLogoutClick: () -> Unit) {
+    var mDisplayMenu by remember { mutableStateOf(false) }
     TopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
         title = {
@@ -48,6 +54,16 @@ fun MoviesTopAppBar() {
                 text = stringResource(id = R.string.movies),
                 color = White800
             )
+        },
+        actions = {
+            DropdownMenu(
+                expanded = mDisplayMenu,
+                onDismissRequest = { mDisplayMenu = false }
+            ) {
+                DropdownMenuItem(
+                    text = { Text(text = stringResource(id = R.string.logout)) },
+                    onClick = { onLogoutClick() })
+            }
         }
     )
 }
@@ -84,7 +100,8 @@ fun HomeScreenUiStateLoadingPreview() {
     MicroPayChallengeTheme {
         MoviesScreen(
             moviesUiState = MoviesUiState.Loading,
-            onMovieClick = {}
+            onMovieClick = {},
+            onLogoutClick = {}
         )
     }
 }
@@ -95,7 +112,8 @@ fun HomeScreenUiStateSuccessPreview() {
     MicroPayChallengeTheme {
         MoviesScreen(
             moviesUiState = MoviesUiState.Success(givenMovies()),
-            onMovieClick = {}
+            onMovieClick = {},
+            onLogoutClick = {}
         )
     }
 }
@@ -106,7 +124,8 @@ fun HomeScreenUiStateErrorPreview() {
     MicroPayChallengeTheme {
         MoviesScreen(
             moviesUiState = MoviesUiState.Error(DataException.MoviesException()),
-            onMovieClick = {}
+            onMovieClick = {},
+            onLogoutClick = {}
         )
     }
 }

@@ -51,7 +51,8 @@ class MoviesActivity : ComponentActivity() {
         moviesUiState?.run {
             MoviesScreen(
                 moviesUiState = this,
-                onMovieClick = { moviesViewModel.navigateToMovieDetail(it) }
+                onMovieClick = { moviesViewModel.navigateToMovieDetail(it) },
+                onLogoutClick = {}
             )
         }
     }
