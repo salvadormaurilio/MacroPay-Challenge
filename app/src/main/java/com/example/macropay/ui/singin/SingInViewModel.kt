@@ -3,6 +3,7 @@ package com.example.macropay.ui.singin
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.macropay.core.coroutines.CoroutinesDispatchers
+import com.example.macropay.domain.IsActiveSessionUseCase
 import com.example.macropay.domain.SignInUseCase
 import com.example.macropay.ui.exception.AuthExceptionHandler
 import com.example.macropay.ui.singin.SignInUiState.Error
@@ -13,12 +14,14 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
 class SingInViewModel @Inject constructor(
-    private val authExceptionHandler: AuthExceptionHandler,
+    private val isActiveSessionUseCase: IsActiveSessionUseCase,
     private val signInUseCase: SignInUseCase,
+    private val authExceptionHandler: AuthExceptionHandler,
     private val coroutinesDispatchers: CoroutinesDispatchers
 ) : ViewModel() {
 
@@ -31,6 +34,13 @@ class SingInViewModel @Inject constructor(
 
     val navigateToHome: SharedFlow<Unit>
         get() = _navigateToHome
+
+    fun validSession() = viewModelScope.launch(coroutinesDispatchers.io){
+        val isActiveSession = isActiveSessionUseCase.isActiveSession()
+        withContext(coroutinesDispatchers.main){
+            if (isActiveSession) navigateToHome()
+        }
+    }
 
     fun signIn(email: String, password: String) = viewModelScope.launch(coroutinesDispatchers.io) {
         emitSignInUiState(Loading)

@@ -29,6 +29,7 @@ class SingInActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         initContent()
         collectSingInActions()
+        singInViewModel.validSession()
     }
 
     private fun initContent() {
