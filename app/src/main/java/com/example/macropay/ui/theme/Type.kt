@@ -4,31 +4,78 @@ import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
 
-// Set of Material typography styles to start with
 val Typography = Typography(
-        bodyLarge = TextStyle(
-                fontFamily = FontFamily.Default,
-                fontWeight = FontWeight.Normal,
-                fontSize = 16.sp,
-                lineHeight = 24.sp,
-                letterSpacing = 0.5.sp
-        )
-        /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
+    headlineSmall = TextStyle(
+         fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = HeadlineSmall,
+        lineHeight = HeadlineLineHeight,
+        color = Neutral160),
+    headlineMedium = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
-)
+        fontSize = HeadlineMedium,
+        lineHeight = HeadlineLineHeight,
+        color = Neutral160),
+    headlineLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Bold,
+        fontSize = HeadlineLarge,
+        lineHeight = HeadlineLineHeight,
+        color = Neutral160),
+    titleSmall = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = LabelLarge,
+        lineHeight = TitleLineHeight,
+        color = Neutral160),
+    titleMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = BodyLarge,
+        lineHeight = HeadlineLineHeight,
+        color = Neutral160),
+    titleLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Bold,
+        fontSize = TitleLarge,
+        lineHeight = HeadlineLineHeight,
+        color = Neutral160),
+    bodySmall = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = LabelMedium,
+        lineHeight = BodyLineHeight,
+        color = Neutral160),
+    bodyMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = LabelLarge,
+        lineHeight = BodyLineHeight,
+        color = Neutral160),
+    bodyLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = BodyLarge,
+        lineHeight = BodyLineHeight,
+        color = Neutral160),
+    labelSmall = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = LabelSmall,
+        lineHeight = LabelLineHeight,
+        color = Neutral160),
+    labelMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = LabelMedium,
+        lineHeight = LabelLineHeight,
+        color = Neutral160),
+    labelLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = LabelLarge,
+        lineHeight = LabelLineHeight,
+        color = Neutral160))
+
