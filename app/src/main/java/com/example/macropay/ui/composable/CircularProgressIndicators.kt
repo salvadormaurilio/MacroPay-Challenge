@@ -14,9 +14,9 @@ import com.example.macropay.ui.theme.MicroPayChallengeTheme
 @Composable
 fun CircularProgressIndicatorFixMax(modifier: Modifier = Modifier) {
     Row(
-            modifier = modifier.fillMaxSize(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+        modifier = modifier.fillMaxSize(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center
     ) {
         CircularProgressIndicator()
     }

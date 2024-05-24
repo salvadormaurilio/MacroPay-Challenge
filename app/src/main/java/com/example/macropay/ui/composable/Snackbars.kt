@@ -15,8 +15,8 @@ import kotlinx.coroutines.launch
 fun SnackbarBlue(snackbarHostState: SnackbarHostState) {
     SnackbarHost(hostState = snackbarHostState) {
         Snackbar(
-                snackbarData = it,
-                containerColor = BlueGrey500,
+            snackbarData = it,
+            containerColor = BlueGrey500,
         )
     }
 }

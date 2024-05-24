@@ -34,21 +34,21 @@ fun EmailTextField(modifier: Modifier = Modifier, email: String, error: Int? = n
     val messageError = error?.run { stringResource(id = this) }.orEmpty()
 
     OutlinedTextField(
-            value = email,
-            label = { Text(text = stringResource(id = R.string.email)) },
-            modifier = modifier.fillMaxWidth(),
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-            isError = messageError.isNotEmpty(),
-            supportingText = {
-                if (messageError.isNotEmpty()) {
-                    Text(
-                            text = messageError,
-                            color = Color.Red
-                    )
-                }
-            },
-            onValueChange = { onValueChange(it) },
+        value = email,
+        label = { Text(text = stringResource(id = R.string.email)) },
+        modifier = modifier.fillMaxWidth(),
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+        isError = messageError.isNotEmpty(),
+        supportingText = {
+            if (messageError.isNotEmpty()) {
+                Text(
+                    text = messageError,
+                    color = Color.Red
+                )
+            }
+        },
+        onValueChange = { onValueChange(it) },
     )
 }
 
@@ -59,30 +59,30 @@ fun PasswordTextField(modifier: Modifier = Modifier, password: String, error: In
     var passwordVisible by rememberSaveable { mutableStateOf(false) }
 
     OutlinedTextField(
-            value = password,
-            label = { Text(text = stringResource(id = R.string.password)) },
-            modifier = modifier.fillMaxWidth(),
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-            trailingIcon = {
-                IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                    Icon(
-                            imageVector = if (passwordVisible) Icons.Filled.Visibility else Icons.Filled.VisibilityOff,
-                            contentDescription = String.empty()
-                    )
-                }
-            },
-            isError = messageError.isNotEmpty(),
-            supportingText = {
-                if (messageError.isNotEmpty()) {
-                    Text(
-                            text = messageError,
-                            color = Color.Red
-                    )
-                }
-            },
-            onValueChange = { onValueChange(it) },
+        value = password,
+        label = { Text(text = stringResource(id = R.string.password)) },
+        modifier = modifier.fillMaxWidth(),
+        singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+        visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+        trailingIcon = {
+            IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                Icon(
+                    imageVector = if (passwordVisible) Icons.Filled.Visibility else Icons.Filled.VisibilityOff,
+                    contentDescription = String.empty()
+                )
+            }
+        },
+        isError = messageError.isNotEmpty(),
+        supportingText = {
+            if (messageError.isNotEmpty()) {
+                Text(
+                    text = messageError,
+                    color = Color.Red
+                )
+            }
+        },
+        onValueChange = { onValueChange(it) },
     )
 }
 
@@ -94,8 +94,8 @@ fun EmailTextFieldPreview() {
 
         Box(modifier = Modifier.padding(Space16)) {
             EmailTextField(
-                    email = email,
-                    onValueChange = { email = it }
+                email = email,
+                onValueChange = { email = it }
             )
         }
     }
@@ -109,9 +109,9 @@ fun EmailTextFieldErrorPreview() {
 
         Box(modifier = Modifier.padding(Space16)) {
             EmailTextField(
-                    email = email,
-                    error = R.string.error_email_invalid,
-                    onValueChange = { email = it }
+                email = email,
+                error = R.string.error_email_invalid,
+                onValueChange = { email = it }
             )
         }
     }
@@ -125,8 +125,8 @@ fun PasswordTextFieldPreview() {
 
         Box(modifier = Modifier.padding(Space16)) {
             PasswordTextField(
-                    password = password,
-                    onValueChange = { password = it }
+                password = password,
+                onValueChange = { password = it }
             )
         }
     }
@@ -140,9 +140,9 @@ fun PasswordTextFieldErrorPreview() {
 
         Box(modifier = Modifier.padding(Space16)) {
             PasswordTextField(
-                    password = password,
-                    error = R.string.error_password_invalid,
-                    onValueChange = { password = it }
+                password = password,
+                error = R.string.error_password_invalid,
+                onValueChange = { password = it }
             )
         }
     }

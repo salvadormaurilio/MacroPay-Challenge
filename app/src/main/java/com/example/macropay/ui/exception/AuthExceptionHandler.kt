@@ -2,10 +2,10 @@ package com.example.macropay.ui.exception
 
 import com.example.macropay.core.ui.isValidEmail
 import com.example.macropay.core.ui.isValidPassword
-import javax.inject.Inject
 import com.example.macropay.ui.exception.AuthUiException.EmailException
 import com.example.macropay.ui.exception.AuthUiException.NoValidationNeededException
 import com.example.macropay.ui.exception.AuthUiException.PasswordException
+import javax.inject.Inject
 
 class AuthExceptionHandler @Inject constructor() {
 

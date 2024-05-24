@@ -4,6 +4,7 @@
     <string name="sign_in">Iniciar Sesión</string>
     <string name="email">Correo Electrónico</string>
     <string name="password">Contraseña</string>
+    <string name="error_sign_in">Usuario Inválido</string>
 
     <string name="error_email_invalid">Correo Inválido</string>
     <string name="error_password_invalid">Contraseña Inválida, debe contener una minúscula, una mayúscula, un número y un caracter especial</string>

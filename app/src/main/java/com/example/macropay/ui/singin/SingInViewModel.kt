@@ -8,18 +8,18 @@ import com.example.macropay.ui.exception.AuthExceptionHandler
 import com.example.macropay.ui.singin.SignInUiState.Error
 import com.example.macropay.ui.singin.SignInUiState.Loading
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
 class SingInViewModel @Inject constructor(
-        private val authExceptionHandler: AuthExceptionHandler,
-        private val signInUseCase: SignInUseCase,
-        private val coroutinesDispatchers: CoroutinesDispatchers
+    private val authExceptionHandler: AuthExceptionHandler,
+    private val signInUseCase: SignInUseCase,
+    private val coroutinesDispatchers: CoroutinesDispatchers
 ) : ViewModel() {
 
     private val _signInUiState = MutableStateFlow<SignInUiState?>(null)
