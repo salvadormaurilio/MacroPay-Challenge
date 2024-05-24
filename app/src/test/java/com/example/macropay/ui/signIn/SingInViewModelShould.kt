@@ -4,7 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.macropay.core.TestDispatcherRule
 import com.example.macropay.core.assertThatEquals
 import com.example.macropay.core.assertThatIsInstanceOf
-import com.example.macropay.data.datasource.exception.AuthException
+import com.example.macropay.data.datasource.exception.DataException
 import com.example.macropay.domain.SignInUseCase
 import com.example.macropay.fakedata.ANY_INVALID_USER_EMAIL
 import com.example.macropay.fakedata.ANY_PASSWORD
@@ -69,7 +69,7 @@ class SingInViewModelShould {
 
     @Test
     fun `Get SignInException from signInUiState when signIn is called and signInUseCase is failure`() = runTest {
-        val resultSignInException: Result<String> = Result.failure(AuthException.SignInException())
+        val resultSignInException: Result<String> = Result.failure(DataException.SignInException())
 
         whenever(signInUseCase.signIn(ANY_USER_EMAIL, ANY_PASSWORD)).thenReturn(flowOf(resultSignInException))
 
@@ -79,7 +79,7 @@ class SingInViewModelShould {
 
         verify(signInUseCase).signIn(ANY_USER_EMAIL, ANY_PASSWORD)
         assertThatIsInstanceOf<SignInUiState.Error>(result)
-        assertThatIsInstanceOf<AuthException.SignInException>((result as SignInUiState.Error).error)
+        assertThatIsInstanceOf<DataException.SignInException>((result as SignInUiState.Error).error)
     }
 
     @Test

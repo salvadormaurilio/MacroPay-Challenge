@@ -11,5 +11,5 @@ interface MoviesServiceRetrofit {
     suspend fun fetchMovies(): MoviesResponse
 
     @GET(MOVIE_DETAIL_ENDPOINT)
-    suspend fun fetchMovieDetail(@Path(MOVIE_ID_PATH) movementId: String): MovieResponse
+    suspend fun fetchMovieDetail(@Path(MOVIE_ID_PATH) movementId: Int): MovieResponse
 }

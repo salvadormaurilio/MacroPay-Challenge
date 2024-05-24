@@ -25,7 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.macropay.R
 import com.example.macropay.core.ui.empty
-import com.example.macropay.data.datasource.exception.AuthException
+import com.example.macropay.data.datasource.exception.DataException
 import com.example.macropay.ui.composable.EmailTextField
 import com.example.macropay.ui.composable.LaunchSnackbar
 import com.example.macropay.ui.composable.PasswordTextField
@@ -127,7 +127,7 @@ private fun SnackbarError(errorException: Throwable?, snackbarHostState: Snackba
 
 @Composable
 private fun getMessageError(errorException: Throwable) = when (errorException) {
-    is AuthException.SignInException -> stringResource(id = R.string.error_sign_in)
+    is DataException.SignInException -> stringResource(id = R.string.error_sign_in)
     else -> errorException.message.orEmpty()
 }
 
@@ -183,7 +183,7 @@ fun SingInScreenPasswordUiStateErrorPreview() {
 fun SingInScreenOtherUiStateErrorPreview() {
     MicroPayChallengeTheme {
         SigInScreen(
-            signInUiState = SignInUiState.Error(AuthException.SignInException()),
+            signInUiState = SignInUiState.Error(DataException.SignInException()),
             onSignInButtonClick = { _, _ -> },
             onSingInSuccess = {}
         )

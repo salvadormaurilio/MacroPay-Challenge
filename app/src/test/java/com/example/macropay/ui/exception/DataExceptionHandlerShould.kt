@@ -8,7 +8,7 @@ import com.example.macropay.fakedata.ANY_USER_EMAIL
 import org.junit.Before
 import org.junit.Test
 
-class AuthExceptionHandlerShould {
+class DataExceptionHandlerShould {
 
     private lateinit var authExceptionHandler: AuthExceptionHandler
 

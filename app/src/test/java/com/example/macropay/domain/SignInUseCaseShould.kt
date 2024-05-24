@@ -3,7 +3,7 @@ package com.example.macropay.domain
 import com.example.macropay.core.assertThatEquals
 import com.example.macropay.core.assertThatIsInstanceOf
 import com.example.macropay.data.AuthRepository
-import com.example.macropay.data.datasource.exception.AuthException
+import com.example.macropay.data.datasource.exception.DataException
 import com.example.macropay.fakedata.ANY_PASSWORD
 import com.example.macropay.fakedata.ANY_USER_EMAIL
 import com.example.macropay.fakedata.ANY_USER_ID
@@ -41,13 +41,13 @@ class SignInUseCaseShould {
 
     @Test
     fun `Get SignInException when signIn is called and signIn in repository is failure`() = runTest {
-        val resultSignUpException: Result<String> = Result.failure(AuthException.SignInException())
+        val resultSignUpException: Result<String> = Result.failure(DataException.SignInException())
 
         whenever(authRepository.signIn(ANY_USER_EMAIL, ANY_PASSWORD)).thenReturn(flowOf(resultSignUpException))
 
         val result = signInUseCase.signIn(ANY_USER_EMAIL, ANY_PASSWORD).lastOrNull()
 
         verify(authRepository).signIn(ANY_USER_EMAIL, ANY_PASSWORD)
-        assertThatIsInstanceOf<AuthException.SignInException>(result?.exceptionOrNull())
+        assertThatIsInstanceOf<DataException.SignInException>(result?.exceptionOrNull())
     }
 }

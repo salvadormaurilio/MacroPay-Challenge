@@ -4,7 +4,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import com.example.macropay.data.datasource.exception.AuthException
+import com.example.macropay.data.datasource.exception.DataException
 import javax.inject.Inject
 
 class AuthRemoteDataSource @Inject constructor(private val firebaseAuth: FirebaseAuth) {
@@ -16,7 +16,7 @@ class AuthRemoteDataSource @Inject constructor(private val firebaseAuth: Firebas
             }
             .addOnFailureListener {
                 it.printStackTrace()
-                trySend(Result.failure(AuthException.SignInException()))
+                trySend(Result.failure(DataException.SignInException()))
             }
         awaitClose { close() }
     }

@@ -2,7 +2,7 @@ package com.example.macropay.data
 
 import com.example.macropay.core.assertThatEquals
 import com.example.macropay.core.assertThatIsInstanceOf
-import com.example.macropay.data.datasource.exception.AuthException
+import com.example.macropay.data.datasource.exception.DataException
 import com.example.macropay.data.datasource.remote.AuthRemoteDataSource
 import com.example.macropay.fakedata.ANY_PASSWORD
 import com.example.macropay.fakedata.ANY_USER_EMAIL
@@ -41,13 +41,13 @@ class AuthRepositoryShould {
 
     @Test
     fun `Get SignInException when signIn is called and signIn in datasource is failure`() = runTest {
-        val resultSignInException: Result<String> = Result.failure(AuthException.SignInException())
+        val resultSignInException: Result<String> = Result.failure(DataException.SignInException())
 
         whenever(authRemoteDataSource.signIn(ANY_USER_EMAIL, ANY_PASSWORD)).thenReturn(flowOf(resultSignInException))
 
         val result = authRepository.signIn(ANY_USER_EMAIL, ANY_PASSWORD).lastOrNull()
 
         verify(authRemoteDataSource).signIn(ANY_USER_EMAIL, ANY_PASSWORD)
-        assertThatIsInstanceOf<AuthException.SignInException>(result?.exceptionOrNull())
+        assertThatIsInstanceOf<DataException.SignInException>(result?.exceptionOrNull())
     }
 }
