@@ -13,8 +13,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class MoviesViewModel @Inject constructor(
+class MoviesViewModel constructor(
     private val getMoviesUseCase: GetMoviesUseCase,
     private val coroutinesDispatchers: CoroutinesDispatchers
 ) : ViewModel() {

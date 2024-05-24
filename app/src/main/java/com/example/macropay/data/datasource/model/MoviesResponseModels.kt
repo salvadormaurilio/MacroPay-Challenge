@@ -63,4 +63,4 @@ fun MoviesResultResponse.toMovie() = Movie(
     rating = voteAverage.orDefault()
 )
 
-private const val BASE_MOVIE_URL= "https://image.tmdb.org/t/p/w200/"
+private const val BASE_MOVIE_URL= "https://image.tmdb.org/t/p/w300/"
