@@ -6,7 +6,7 @@ data class MovieDetail(
     val title: String,
     val duration: Int,
     val releaseDate: String,
-    val rating: Double,
-    val genres: List<String>,
+    val rating: String,
+    val genres: String,
     val description: String
 )

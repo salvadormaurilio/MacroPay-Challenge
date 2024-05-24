@@ -14,5 +14,8 @@
     <string name="movie_detail">Detalle de la Película</string>
     <string name="rating_with_value">Calificación: %s</string>
     <string name="release_date">Fecha de Lanzamiento</string>
-
-    ç</resources>
+    <string name="duration">Duración</string>
+    <string name="duration_with_value">%d min</string>
+    <string name="rating">Calificación</string>
+    <string name="genres">Generos</string>
+</resources>

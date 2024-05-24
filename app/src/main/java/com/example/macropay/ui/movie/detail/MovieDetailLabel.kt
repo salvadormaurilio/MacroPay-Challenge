@@ -19,31 +19,31 @@ import com.example.macropay.ui.theme.Space16
 import com.example.macropay.ui.theme.Space4
 
 @Composable
-fun LabelMovieDetailLabel(modifier: Modifier = Modifier, @StringRes title: Int, text: String) {
-    Spacer(modifier = modifier.height(Space12))
-    Text(
-        text = stringResource(id = title),
-        style = MaterialTheme.typography.labelMedium
+fun MovieDetailLabel(modifier: Modifier = Modifier, @StringRes title: Int, text: String) {
+    Column(modifier = modifier.padding(horizontal = Space16)) {
+        HorizontalDivider()
+        Spacer(modifier = Modifier.height(Space12))
+        Text(
+            text = stringResource(id = title),
+            style = MaterialTheme.typography.titleMedium
 
-    )
-    Spacer(modifier = Modifier.height(Space4))
-    Text(
-        text = text,
-        style = MaterialTheme.typography.titleMedium
-    )
-    Spacer(modifier = Modifier.height(Space12))
-    HorizontalDivider()
+        )
+        Spacer(modifier = Modifier.height(Space4))
+        Text(
+            text = text,
+            style = MaterialTheme.typography.labelMedium
+        )
+        Spacer(modifier = Modifier.height(Space12))
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun LabelMovementDetailPreview() {
     MicroPayChallengeTheme {
-        Column(modifier = Modifier.padding(all = Space16)) {
-            LabelMovieDetailLabel(
-                title = R.string.release_date,
-                text = ANY_MOVIE_RELEASE_DATE
-            )
-        }
+        MovieDetailLabel(
+            title = R.string.release_date,
+            text = ANY_MOVIE_RELEASE_DATE
+        )
     }
 }
