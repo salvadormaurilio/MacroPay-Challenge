@@ -24,6 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.movies.MoviesActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MicroPayChallenge"/>
+        <activity
+            android:name=".ui.movie.detail.MovieDetailDetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MicroPayChallenge"/>
     </application>
 
 </manifest>
