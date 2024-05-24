@@ -14,6 +14,6 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun MicroPayChallengeTheme(content: @Composable () -> Unit) {
+fun MacroPayChallengeTheme(content: @Composable () -> Unit) {
     MaterialTheme(colorScheme = LightColorScheme, typography = Typography, content = content)
 }

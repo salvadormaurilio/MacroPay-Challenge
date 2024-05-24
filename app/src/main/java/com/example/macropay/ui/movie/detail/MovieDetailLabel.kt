@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.macropay.R
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 import com.example.macropay.ui.theme.Space12
 import com.example.macropay.ui.theme.Space16
 import com.example.macropay.ui.theme.Space4
@@ -40,7 +40,7 @@ fun MovieDetailLabel(modifier: Modifier = Modifier, @StringRes title: Int, text:
 @Preview(showBackground = true)
 @Composable
 fun LabelMovementDetailPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         MovieDetailLabel(
             title = R.string.release_date,
             text = ANY_MOVIE_RELEASE_DATE

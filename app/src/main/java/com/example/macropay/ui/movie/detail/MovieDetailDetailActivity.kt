@@ -14,7 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.example.macropay.core.extensions.intentTo
 import com.example.macropay.core.extensions.orDefault
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,7 +30,7 @@ class MovieDetailDetailActivity : ComponentActivity() {
 
     private fun initContent() {
         setContent {
-            MicroPayChallengeTheme {
+            MacroPayChallengeTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background

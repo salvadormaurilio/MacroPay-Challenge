@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import com.example.macropay.R
 import com.example.macropay.ui.theme.BlueGrey500
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 import com.example.macropay.ui.theme.Space16
 import com.example.macropay.ui.theme.Space32
 import com.example.macropay.ui.theme.Space48
@@ -57,7 +57,7 @@ class IsLoadingParameterProvider : PreviewParameterProvider<Boolean> {
 @Preview(device = Devices.NEXUS_5, showBackground = true)
 @Composable
 fun ProgressButtonPreview(@PreviewParameter(IsLoadingParameterProvider::class) isLoading: Boolean) {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         Box(modifier = Modifier.padding(Space16)) {
             ProgressButton(
                     isLoading = isLoading,

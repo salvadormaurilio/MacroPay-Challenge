@@ -25,7 +25,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.macropay.R
 import com.example.macropay.core.extensions.empty
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 import com.example.macropay.ui.theme.Space16
 
 
@@ -89,7 +89,7 @@ fun PasswordTextField(modifier: Modifier = Modifier, password: String, error: In
 @Preview(showBackground = true)
 @Composable
 fun EmailTextFieldPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         var email by rememberSaveable { mutableStateOf(String.empty()) }
 
         Box(modifier = Modifier.padding(Space16)) {
@@ -104,7 +104,7 @@ fun EmailTextFieldPreview() {
 @Preview(showBackground = true)
 @Composable
 fun EmailTextFieldErrorPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         var email by rememberSaveable { mutableStateOf(String.empty()) }
 
         Box(modifier = Modifier.padding(Space16)) {
@@ -120,7 +120,7 @@ fun EmailTextFieldErrorPreview() {
 @Preview(showBackground = true)
 @Composable
 fun PasswordTextFieldPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         var password by rememberSaveable { mutableStateOf(String.empty()) }
 
         Box(modifier = Modifier.padding(Space16)) {
@@ -135,7 +135,7 @@ fun PasswordTextFieldPreview() {
 @Preview(showBackground = true)
 @Composable
 fun PasswordTextFieldErrorPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         var password by rememberSaveable { mutableStateOf(String.empty()) }
 
         Box(modifier = Modifier.padding(Space16)) {

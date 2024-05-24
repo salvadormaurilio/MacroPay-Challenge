@@ -34,7 +34,7 @@ import com.example.macropay.domain.model.MovieDetail
 import com.example.macropay.ui.composable.CircularProgressIndicatorFixMax
 import com.example.macropay.ui.composable.LaunchSnackbar
 import com.example.macropay.ui.composable.SnackbarBlue
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 import com.example.macropay.ui.theme.Space12
 import com.example.macropay.ui.theme.Space16
 import com.example.macropay.ui.theme.White800
@@ -150,7 +150,7 @@ fun MovementDetailContent(modifier: Modifier = Modifier, movieDetail: MovieDetai
 @Preview(showBackground = true)
 @Composable
 fun MovementDetailScreenUiStateLoadingPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         MovieDetailScreen(
             movieDetailUiState = MovieDetailUiState.Loading,
             onBackPressedClick = {}
@@ -161,7 +161,7 @@ fun MovementDetailScreenUiStateLoadingPreview() {
 @Preview(showBackground = true)
 @Composable
 fun MovementDetailScreenUiStateSuccessPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         MovieDetailScreen(
             movieDetailUiState = MovieDetailUiState.Success(givenMovieDetail()),
             onBackPressedClick = {}
@@ -172,7 +172,7 @@ fun MovementDetailScreenUiStateSuccessPreview() {
 @Preview(showBackground = true)
 @Composable
 fun MovementDetailScreenUiStateErrorPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         MovieDetailScreen(
             movieDetailUiState = MovieDetailUiState.Error(DataException.MovieDetailException()),
             onBackPressedClick = {}

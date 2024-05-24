@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 
 @Composable
 fun CircularProgressIndicatorFixMax(modifier: Modifier = Modifier) {
@@ -25,7 +25,7 @@ fun CircularProgressIndicatorFixMax(modifier: Modifier = Modifier) {
 @Preview(device = Devices.NEXUS_5, showBackground = true)
 @Composable
 fun CircularProgressIndicatorFixMaxPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         CircularProgressIndicatorFixMax()
     }
 }

@@ -16,7 +16,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.example.macropay.core.extensions.intentToAndClearStack
 import com.example.macropay.ui.movies.MoviesActivity
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -34,7 +34,7 @@ class SingInActivity : ComponentActivity() {
 
     private fun initContent() {
         setContent {
-            MicroPayChallengeTheme {
+            MacroPayChallengeTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background

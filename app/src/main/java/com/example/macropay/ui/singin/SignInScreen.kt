@@ -32,7 +32,7 @@ import com.example.macropay.ui.composable.PasswordTextField
 import com.example.macropay.ui.composable.ProgressButton
 import com.example.macropay.ui.composable.SnackbarBlue
 import com.example.macropay.ui.exception.AuthUiException
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 import com.example.macropay.ui.theme.Space16
 import com.example.macropay.ui.theme.Space32
 import com.example.macropay.ui.theme.White800
@@ -134,7 +134,7 @@ private fun getMessageError(errorException: Throwable) = when (errorException) {
 @Preview(showBackground = true)
 @Composable
 fun SingInScreenPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         SigInScreen(
             onSignInButtonClick = { _, _ -> },
             onSingInSuccess = {}
@@ -145,7 +145,7 @@ fun SingInScreenPreview() {
 @Preview(showBackground = true)
 @Composable
 fun SingInScreenUiStateLoadingPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         SigInScreen(
             signInUiState = SignInUiState.Loading,
             onSignInButtonClick = { _, _ -> },
@@ -157,7 +157,7 @@ fun SingInScreenUiStateLoadingPreview() {
 @Preview(showBackground = true)
 @Composable
 fun SingInScreenEmailUiStateErrorPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         SigInScreen(
             signInUiState = SignInUiState.Error(AuthUiException.EmailException),
             onSignInButtonClick = { _, _ -> },
@@ -169,7 +169,7 @@ fun SingInScreenEmailUiStateErrorPreview() {
 @Preview(showBackground = true)
 @Composable
 fun SingInScreenPasswordUiStateErrorPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         SigInScreen(
             signInUiState = SignInUiState.Error(AuthUiException.PasswordException),
             onSignInButtonClick = { _, _ -> },
@@ -181,7 +181,7 @@ fun SingInScreenPasswordUiStateErrorPreview() {
 @Preview(showBackground = true)
 @Composable
 fun SingInScreenOtherUiStateErrorPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         SigInScreen(
             signInUiState = SignInUiState.Error(DataException.SignInException()),
             onSignInButtonClick = { _, _ -> },

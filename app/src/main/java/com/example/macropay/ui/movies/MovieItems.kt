@@ -27,7 +27,7 @@ import coil.compose.AsyncImage
 import com.example.macropay.R
 import com.example.macropay.core.extensions.empty
 import com.example.macropay.domain.model.Movie
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 import com.example.macropay.ui.theme.Space12
 import com.example.macropay.ui.theme.Space16
 import com.example.macropay.ui.theme.Space4
@@ -99,7 +99,7 @@ fun MovieItems(modifier: Modifier = Modifier, movies: List<Movie>, onMovieClick:
 @Preview(showBackground = true)
 @Composable
 fun MovieItemPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         MovieItem(movie = givenMovie1(),
             onMovieClick = {})
     }
@@ -108,7 +108,7 @@ fun MovieItemPreview() {
 @Preview(showBackground = true)
 @Composable
 fun MovieItemsPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         MovieItems(movies = givenMovies(),
             onMovieClick = {})
     }

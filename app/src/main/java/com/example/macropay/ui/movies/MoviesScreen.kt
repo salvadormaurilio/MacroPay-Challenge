@@ -29,7 +29,7 @@ import com.example.macropay.data.datasource.exception.DataException
 import com.example.macropay.ui.composable.CircularProgressIndicatorFixMax
 import com.example.macropay.ui.composable.LaunchSnackbar
 import com.example.macropay.ui.composable.SnackbarBlue
-import com.example.macropay.ui.theme.MicroPayChallengeTheme
+import com.example.macropay.ui.theme.MacroPayChallengeTheme
 import com.example.macropay.ui.theme.White800
 
 
@@ -109,7 +109,7 @@ private fun MoviesUiState(
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenUiStateLoadingPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         MoviesScreen(
             moviesUiState = MoviesUiState.Loading,
             onMovieClick = {},
@@ -121,7 +121,7 @@ fun HomeScreenUiStateLoadingPreview() {
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenUiStateSuccessPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         MoviesScreen(
             moviesUiState = MoviesUiState.Success(givenMovies()),
             onMovieClick = {},
@@ -133,7 +133,7 @@ fun HomeScreenUiStateSuccessPreview() {
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenUiStateErrorPreview() {
-    MicroPayChallengeTheme {
+    MacroPayChallengeTheme {
         MoviesScreen(
             moviesUiState = MoviesUiState.Error(DataException.MoviesException()),
             onMovieClick = {},
