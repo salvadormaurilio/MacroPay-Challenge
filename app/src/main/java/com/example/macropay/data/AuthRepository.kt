@@ -5,7 +5,6 @@ import javax.inject.Inject
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 
-@OptIn(ExperimentalCoroutinesApi::class)
 class AuthRepository @Inject constructor(private val authRemoteDataSource: AuthRemoteDataSource) {
 
     fun signIn(email: String, password: String): Flow<Result<String>> = authRemoteDataSource.signIn(email, password)
