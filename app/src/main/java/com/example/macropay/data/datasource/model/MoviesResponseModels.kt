@@ -46,6 +46,7 @@ data class MoviesResultResponse(
     val voteCount: Int?,
 )
 
+fun Result<MoviesResponse>.toMovies() = map { it.toMovies() }
 
 fun MoviesResponse.toMovies() = Movies(
     totalPages = totalPages.orDefault(),

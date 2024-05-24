@@ -84,6 +84,8 @@ data class MovieSpokenLanguageResponse(
     val name: String?,
 )
 
+fun Result<MovieDetailResponse>.toMovieDetailResponse() = map { it.toMovieDetail() }
+
 fun MovieDetailResponse.toMovieDetail() = MovieDetail(
     id = id.orDefault(),
     image =  BASE_MOVIE_URL+backdropPath.orEmpty(),

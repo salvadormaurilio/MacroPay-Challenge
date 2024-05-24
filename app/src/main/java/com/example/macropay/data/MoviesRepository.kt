@@ -1,11 +1,14 @@
 package com.example.macropay.data
 
-import com.example.macropay.data.datasource.remote.AuthRemoteDataSource
+import com.example.macropay.data.datasource.model.toMovieDetailResponse
+import com.example.macropay.data.datasource.model.toMovies
+import com.example.macropay.data.datasource.remote.MoviesRemoteDataSource
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.Flow
 
-class MoviesRepository @Inject constructor(private val authRemoteDataSource: AuthRemoteDataSource) {
+class MoviesRepository @Inject constructor(private val moviesRemoteDataSource: MoviesRemoteDataSource) {
 
-    fun signIn(email: String, password: String): Flow<Result<String>> = authRemoteDataSource.signIn(email, password)
+    fun fetchMovies() = moviesRemoteDataSource.fetchMovies().map { it.toMovies() }
+
+    fun fetchMovieDetail(movieId: Int) = moviesRemoteDataSource.fetchMovieDetail(movieId).map { it.toMovieDetailResponse() }
 }
