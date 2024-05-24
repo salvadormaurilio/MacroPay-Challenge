@@ -38,7 +38,7 @@ class MoviesViewModel constructor(
     }
 
     private fun getMoviesSuccess(result: Result<Movies>) = result.onSuccess {
-        emitMoviesUiState(MoviesUiState.Success(it))
+        emitMoviesUiState(MoviesUiState.Success(it.movies))
     }
 
     private fun getMoviesError(result: Result<Movies>) = result.onFailure {

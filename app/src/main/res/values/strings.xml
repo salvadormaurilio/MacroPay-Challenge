@@ -10,5 +10,8 @@
     <string name="error_password_invalid">Contraseña Inválida, debe contener una minúscula, una mayúscula, un número y un caracter especial</string>
     <string name="error_get_data">Error al obtener la información</string>
 
+    <string name="movies">Películas</string>
+    <string name="movie_detail">Detalle de la Película</string>
     <string name="rating">Calificación: %s</string>
-</resources>
+
+    ç</resources>
