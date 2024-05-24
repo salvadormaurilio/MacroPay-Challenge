@@ -2,9 +2,13 @@ package com.example.macropay.ui.movies
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHostState
@@ -20,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.macropay.R
+import com.example.macropay.core.extensions.empty
 import com.example.macropay.data.datasource.exception.DataException
 import com.example.macropay.ui.composable.CircularProgressIndicatorFixMax
 import com.example.macropay.ui.composable.LaunchSnackbar
@@ -56,6 +61,13 @@ fun MoviesTopAppBar(onLogoutClick: () -> Unit) {
             )
         },
         actions = {
+            IconButton(onClick = { mDisplayMenu = !mDisplayMenu }) {
+                Icon(
+                    imageVector = Icons.Default.MoreVert,
+                    contentDescription = String.empty(),
+                    tint = White800
+                )
+            }
             DropdownMenu(
                 expanded = mDisplayMenu,
                 onDismissRequest = { mDisplayMenu = false }

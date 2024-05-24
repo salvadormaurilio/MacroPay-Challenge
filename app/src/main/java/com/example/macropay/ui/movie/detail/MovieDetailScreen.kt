@@ -92,7 +92,8 @@ fun MovementDetailTopAppBar(onBackPressedClick: () -> Unit) {
             IconButton(onClick = onBackPressedClick) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = String.empty()
+                    contentDescription = String.empty(),
+                    tint = White800
                 )
             }
         }
